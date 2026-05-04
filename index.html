@@ -3,37 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlerteMarc - Votre sécurité connectée</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; color: #333; }
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        img { max-width: 300px; border: 2px solid #ddd; border-radius: 15px; margin: 20px 0; }
-        h1 { color: #2c3e50; }
-        .description { font-size: 1.2em; font-style: italic; color: #555; margin-bottom: 20px; }
-        .feature { text-align: left; margin-top: 30px; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #888; }
-    </style>
+    <title>AlertMarc - Notifications Vocales & Alertes Sonores</title>
+    <!-- Intégration du fichier CSS externe -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>AlerteMarc</h1>
-    
-    <img src="app-screenshot.png" alt="Interface de l'application AlerteMarc">
-    
-    <p class="description">
-        AlerteMarc transforme les notifications discrètes de vos appareils connectés en alertes sonores puissantes et messages vocaux. Ne manquez plus jamais une alarme importante.
-    </p>
+    <header>
+        <nav>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <!-- Votre logo avec bords arrondis via le CSS -->
+                <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
+                <span class="logo">AlertMarc</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#preview">Aperçu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cgv.html">Légal</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="feature">
-        <h2>Comment ça marche ?</h2>
-        <p>AlerteMarc est une application conçue pour lire les notifications de votre téléphone et envoyer un message sonore ou vocal vers vos caméras connectées, agissant ainsi comme un signal d'alarme efficace.</p>
+    <section class="hero" id="accueil">
+        <h1>AlertMarc</h1>
+        <p>Ne ratez plus aucune notification importante. Transformez les alertes de vos appareils connectés en messages vocaux ou en sirènes puissantes.</p>
+        <!-- Appel de la fonction Javascript pour le téléchargement -->
+        <button class="btn" onclick="telechargerApp()">Télécharger sur le Play Store</button>
+    </section>
+
+    <div class="container" id="features">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Sécurisez votre environnement avec AlertMarc</h2>
+        <div class="features">
+            <div class="feature-card">
+                <span class="icon">📢</span>
+                <h3>Annonce Vocale</h3>
+                <p>L'application vous annonce vocalement l'événement, par exemple : "Vous avez une présence dans votre jardin".</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">⚙️</span>
+                <h3>Alertes Sur-Mesure</h3>
+                <p>Personnalisez vos alertes selon vos besoins : choisissez une sirène percutante ou un texte vocal spécifique.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🚗</span>
+                <h3>Amplification Sonore</h3>
+                <p>Idéal pour vos caméras et détecteurs connectés. Ne manquez plus une alerte, même si vous n'avez pas les yeux sur votre téléphone.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-section" id="preview">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Aperçu de l'interface</h2>
+            <div class="screenshots">
+                <!-- Vos captures d'écran réelles -->
+                <img src="capture1.png" alt="AlertMarc - Écran principal" loading="lazy">
+                <img src="capture2.png" alt="AlertMarc - Configuration" loading="lazy">
+                <img src="capture3.png" alt="AlertMarc - Alertes" loading="lazy">
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p><a href="privacy.html">Politique de confidentialité</a></p>
-    </footer>
+        <p>&copy; 2026 AlertMarc. Tous droits réservés.</p>
+        <div class="footer-links">
+    <a href="cgv.html">Mentions Légales & Confidentialité</a>
+    <a href="contact.html">Aide & Support</a>
 </div>
+    </footer>
 
+    <!-- Intégration du fichier JavaScript externe -->
+    <script src="script.js"></script>
 </body>
 </html>
