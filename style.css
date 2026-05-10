@@ -1,4 +1,4 @@
-/* style.css - Alerte Marc */
+/* style.css - AlertMarc */
 
 * { 
     margin: 0; 
@@ -13,8 +13,7 @@ body {
     color: #333;
 }
 
-/* En-tête et barre de navigation */
-/* --- HEADER & LOGO --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
@@ -37,16 +36,16 @@ nav {
     display: flex;
     align-items: center;
     gap: 12px;
-    text-decoration: none; /* Enlève le trait sous le texte */
+    text-decoration: none;
     color: white;
 }
 
 .logo-img {
-    height: 45px;      /* Hauteur fixe pour forcer l'affichage */
-    width: auto;       /* Garde les proportions */
-    display: block;    /* Empêche les décalages */
+    height: 45px;
+    width: auto;
+    display: block;
     border-radius: 8px;
-    background-color: white; /* Aide à voir si l'image est là même si elle est transparente */
+    background-color: white;
 }
 
 .logo {
@@ -55,18 +54,6 @@ nav {
     color: white !important;
 }
 
-/* --- AJUSTEMENT MOBILE --- */
-@media (max-width: 768px) {
-    nav {
-        padding: 0 1rem;
-    }
-    .logo-img {
-        height: 38px; /* Un peu plus petit sur mobile */
-    }
-    .logo {
-        font-size: 1.3rem;
-    }
-}
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -84,7 +71,22 @@ nav {
     color: #bbdefb;
 }
 
-/* Section Hero (Bannière principale) */
+/* --- BOUTON BURGER (MOBILE) --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* --- SECTIONS --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -94,16 +96,8 @@ nav {
     padding: 140px 20px;
 }
 
-.hero h1 { 
-    font-size: 3.5rem; 
-    margin-bottom: 1rem; 
-}
-
-.hero p { 
-    font-size: 1.4rem; 
-    max-width: 700px; 
-    margin: 0 auto 2rem; 
-}
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.4rem; max-width: 700px; margin: 0 auto 2rem; }
 
 .btn {
     background: #42a5f5;
@@ -119,10 +113,7 @@ nav {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.btn:hover {
-    background: #1e88e5;
-    transform: translateY(-3px);
-}
+.btn:hover { background: #1e88e5; transform: translateY(-3px); }
 
 .container {
     max-width: 1100px;
@@ -130,7 +121,6 @@ nav {
     padding: 4rem 2rem;
 }
 
-/* Section des Fonctionnalités */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -144,120 +134,46 @@ nav {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-}
+.feature-card .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
 
-.feature-card .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-/* Section de prévisualisation de l'application */
-.preview-section {
-    background-color: #f1f3f5;
-    width: 100%;
-}
+.preview-section { background-color: #f1f3f5; width: 100%; }
 
 .screenshots {
     display: flex;
     overflow-x: auto;
     gap: 1.5rem;
     padding: 1rem 0;
-    scrollbar-width: thin;
-}
-
-.screenshots::-webkit-scrollbar {
-    height: 8px;
-}
-
-.screenshots::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 4px;
 }
 
 .screenshots img {
     height: 400px;
     border-radius: 15px;
     border: 2px solid #ddd;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Pied de page (Footer) */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 3rem 0;
-}
+footer { background: #222; color: white; text-align: center; padding: 3rem 0; }
+.footer-links { margin-top: 1rem; }
+.footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; }
+.footer-links a:hover { color: white; }
 
-.footer-links {
-    margin-top: 1rem;
-}
-
-.footer-links a {
-    color: #aaa;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: white;
-}
-
-/* Style du bouton Burger */
-.menu-toggle {
-    display: none; /* Caché par défaut sur ordinateur */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* --- ADAPTATION MOBILE (Téléphones) --- */
+/* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .nav-links.active {
-        display: flex !important; /* Le !important force l'affichage */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #1565c0;
-        padding: 20px;
-    }
-}
+    .menu-toggle { display: flex; }
 
     .nav-links {
-        display: none; /* On cache les liens horizontaux */
+        display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 70px; /* Juste sous le header */
+        top: 65px;
         left: 0;
         background-color: #1565c0;
         padding: 20px;
         text-align: center;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
 
-    .nav-links.active {
-        display: flex; /* On l'affiche quand on clique sur le burger */
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
+    .nav-links.active { display: flex !important; }
+    .nav-links li { margin: 15px 0; }
 }
