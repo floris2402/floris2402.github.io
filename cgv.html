@@ -6,42 +6,40 @@
     <title>Mentions Légales - AlertMarc</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .legal-content { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 10px; shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .legal-content { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .legal-content h2 { color: #1565c0; border-bottom: 2px solid #f1f3f5; padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px; text-transform: uppercase; font-size: 1.2rem; }
         .legal-content p, .legal-content li { margin-bottom: 15px; color: #555; line-height: 1.7; }
         .legal-info-grid { display: grid; grid-template-columns: 150px 1fr; gap: 10px; margin-bottom: 20px; }
         .legal-info-grid div:first-child { font-weight: bold; color: #333; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #1e88e5; text-decoration: none; font-weight: 500; }
     </style>
 </head>
 <body>
-   <header>
-    <nav>
-        <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
-                <span class="logo">AlertMarc</span>
-            </a>
-        </div>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Logo AlertMarc" class="logo-img">
+                    <span class="logo">AlertMarc</span>
+                </a>
+            </div>
 
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#features">Fonctionnalités</a></li>
-            <li><a href="index.html#preview">Aperçu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cgv.html">Légal</a></li>
-        </ul>
-    </nav>
-</header>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#features">Fonctionnalités</a></li>
+                <li><a href="index.html#preview">Aperçu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cgv.html">Légal</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container">
-        <a href="index.html" class="back-link">← Retour à l'accueil</a>
         <article class="legal-content">
             <h1>DOCUMENTS LÉGAUX - AlertMarc</h1>
 
@@ -62,7 +60,11 @@
             <p><strong>3. Vos droits :</strong> Conformément au RGPD, vous disposez d'un droit d'accès et de suppression en écrivant à eco.marc@hotmail.fr.</p>
         </article>
     </div>
-    <footer><p>&copy; 2026 AlertMarc. Tous droits réservés.</p></footer>
+
+    <footer>
+        <p>&copy; 2026 AlertMarc. Tous droits réservés.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
