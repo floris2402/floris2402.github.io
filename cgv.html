@@ -15,19 +15,30 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div style="display: flex; align-items: center; gap: 12px;">
+   <header>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
                 <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
                 <span class="logo">AlertMarc</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cgv.html">Légal</a></li>
-            </ul>
-        </nav>
-    </header>
+            </a>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#features">Fonctionnalités</a></li>
+            <li><a href="index.html#preview">Aperçu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cgv.html">Légal</a></li>
+        </ul>
+    </nav>
+</header>
 
     <div class="container">
         <a href="index.html" class="back-link">← Retour à l'accueil</a>
