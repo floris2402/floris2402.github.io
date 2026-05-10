@@ -14,14 +14,14 @@ body {
 }
 
 /* En-tête et barre de navigation */
+/* --- HEADER & LOGO --- */
 header {
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
 nav {
@@ -33,25 +33,39 @@ nav {
     padding: 0 2rem;
 }
 
-/* Remplacez ou ajoutez ces lignes pour le logo */
-.logo-container {
+.logo-link {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none; /* Enlève le trait sous le texte */
+    color: white;
 }
 
 .logo-img {
-    height: 45px;
-    width: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    background-color: white; /* Optionnel, utile si votre logo est transparent */
+    height: 45px;      /* Hauteur fixe pour forcer l'affichage */
+    width: auto;       /* Garde les proportions */
+    display: block;    /* Empêche les décalages */
+    border-radius: 8px;
+    background-color: white; /* Aide à voir si l'image est là même si elle est transparente */
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: white;
+    color: white !important;
+}
+
+/* --- AJUSTEMENT MOBILE --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
+    .logo-img {
+        height: 38px; /* Un peu plus petit sur mobile */
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
 }
 .nav-links {
     display: flex;
