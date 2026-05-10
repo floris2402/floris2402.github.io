@@ -10,21 +10,27 @@
 <body>
 
     <header>
-        <nav>
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <!-- Votre logo avec bords arrondis via le CSS -->
-                <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
-                <span class="logo">AlertMarc</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#preview">Aperçu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cgv.html">Légal</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo AlertMarc" class="logo-img">
+            <span class="logo">AlertMarc</span>
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#features">Fonctionnalités</a></li>
+            <li><a href="index.html#preview">Aperçu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cgv.html">Légal</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="hero" id="accueil">
         <h1>AlertMarc</h1>
