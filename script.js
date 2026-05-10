@@ -14,6 +14,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Au clic sur le burger, on ajoute ou retire la classe "active"
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        
+        // Animation optionnelle du burger (transformation en croix)
+        menuToggle.classList.toggle('is-active');
+    });
+
+    // Fermer le menu automatiquement quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+});
+
 // Fonction appelée lors du clic sur le bouton de téléchargement
 function telechargerApp() {
     alert("Merci de votre intérêt ! L'application sera bientôt disponible sur le Google Play Store.");
