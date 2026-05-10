@@ -33,9 +33,11 @@ nav {
     padding: 0 2rem;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
+/* Remplacez ou ajoutez ces lignes pour le logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo-img {
@@ -43,9 +45,14 @@ nav {
     width: auto;
     border-radius: 10px;
     object-fit: cover;
-    background-color: white;
+    background-color: white; /* Optionnel, utile si votre logo est transparent */
 }
 
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
 .nav-links {
     display: flex;
     gap: 2rem;
