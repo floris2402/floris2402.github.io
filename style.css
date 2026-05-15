@@ -1,5 +1,6 @@
 /* style.css - AlertMarc */
 
+/* --- RESET & BASE --- */
 * { 
     margin: 0; 
     padding: 0; 
@@ -14,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- NAVIGATION --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
@@ -49,7 +50,94 @@ nav {
     background-color: white;
 }
 
-/* --- CARROUSEL VERSION ORDINATEUR --- */
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #bbdefb; }
+
+/* --- BOUTON BURGER --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* --- SECTION HERO --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.4rem; max-width: 700px; margin: 0 auto 2rem; }
+
+.btn {
+    background: #42a5f5;
+    color: white;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover { background: #1e88e5; transform: translateY(-3px); }
+
+/* --- SECTION FEATURES --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.feature-card .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+
+/* --- CARROUSEL (VUE ORDINATEUR) --- */
 .preview-section { 
     background-color: #f1f3f5; 
     width: 100%; 
@@ -59,19 +147,16 @@ nav {
 .gallery-container {
     align-items: center;
     display: flex;
-    height: 450px; /* C'est la hauteur qui commande tout ici */
+    height: 450px; /* Hauteur de référence */
     margin: 0 auto;
-    max-width: 800px; /* On élargit un peu pour laisser respirer les 3 images */
+    max-width: 800px; 
     position: relative;
 }
 
 .gallery-item {
-    /* --- RÉGLAGE ANTI-DÉFORMATION --- */
-    height: 100%;       /* On utilise la hauteur comme référence */
-    width: auto;        /* La largeur se calcule TOUTE SEULE par rapport à la hauteur */
-    aspect-ratio: auto; /* On laisse l'image d'origine décider de son ratio */
-    object-fit: contain; /* L'image ne sera jamais étirée, elle reste entière */
-    /* -------------------------------- */
+    height: 100%;       /* Prend toute la hauteur du conteneur */
+    width: auto;        /* Calcule la largeur proportionnellement */
+    object-fit: contain;
     opacity: 0;
     position: absolute;
     transition: all 0.4s ease-in-out;
@@ -79,36 +164,57 @@ nav {
     border-radius: 15px;
 }
 
-/* Image du fond (gauche) */
 .gallery-item-1 { 
     left: 25%;
-    height: 70%; /* Plus petite car elle est "plus loin" */
+    height: 70%; 
     opacity: 0.4;
     transform: translateX(-50%);
     z-index: 1;
 }
 
-/* Image intermédiaire */
 .gallery-item-2 { 
     left: 38%;
-    height: 85%; /* Taille moyenne */
+    height: 85%; 
     opacity: 0.7; 
     transform: translateX(-50%);
     z-index: 1;
 }
 
-/* Image centrale (Devant) */
 .gallery-item-3 { 
     left: 50%;
-    height: 100%; /* Elle prend toute la hauteur du conteneur */
+    height: 100%; 
     opacity: 1;
     box-shadow: -2px 5px 25px rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
     z-index: 2;
 }
 
-/* --- ADAPTATION MOBILE (Reste inchangé car il fonctionnait bien) --- */
+/* --- FOOTER --- */
+footer { background: #222; color: white; text-align: center; padding: 3rem 0; }
+.footer-links { margin-top: 1rem; }
+.footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; }
+.footer-links a:hover { color: white; }
+
+/* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        background-color: #1565c0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links.active { display: flex !important; }
+    .nav-links li { margin: 15px 0; }
+
+    /* Correction Carrousel Mobile */
     .gallery-container { 
         max-width: 95% !important; 
         height: 350px !important; 
@@ -116,8 +222,7 @@ nav {
 
     .gallery-item {
         width: auto !important; 
-        height: 100% !important; 
-        aspect-ratio: auto !important;
+        height: 100% !important;
     }
 
     .gallery-item-1 { height: 70% !important; left: 15% !important; }
