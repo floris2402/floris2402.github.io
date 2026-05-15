@@ -171,8 +171,18 @@ footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
 
 /* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle .bar { width: 25px; height: 3px; background: white; }
+    .menu-toggle { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 5px; 
+        cursor: pointer; 
+    }
+    
+    .menu-toggle .bar { 
+        width: 25px; 
+        height: 3px; 
+        background: white; 
+    }
     
     .nav-links { 
         display: none; 
@@ -187,19 +197,34 @@ footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
     
     .nav-links.active { display: flex; }
 
-    /* Correction Carrousel Mobile */
+    /* --- CORRECTION FINALE DU CARROUSEL MOBILE --- */
     .gallery-container { 
-        max-width: 90%; 
-        height: 250px; /* Moins haut sur mobile */
+        max-width: 95% !important; 
+        height: 300px !important; /* On redonne de la hauteur pour le format vertical */
     }
 
     .gallery-item {
-        width: 110px; 
-        height: auto; 
-        aspect-ratio: 9 / 19; /* Format smartphone vertical */
+        /* On force le format vertical : largeur étroite, hauteur automatique */
+        width: 100px !important; 
+        height: auto !important; 
+        aspect-ratio: 9 / 19 !important; /* Ratio typique d'un écran de smartphone */
+        object-fit: contain !important; /* Garantit que l'image n'est jamais écrasée */
+        background-color: transparent;
     }
 
-    .gallery-item-1 { width: 85px; left: 20%; }
-    .gallery-item-2 { width: 100px; left: 35%; }
-    .gallery-item-3 { width: 115px; left: 50%; }
+    /* Ajustement des positions pour éviter que les images ne se touchent trop */
+    .gallery-item-1 { 
+        width: 80px !important; 
+        left: 15% !important; 
+    }
+    
+    .gallery-item-2 { 
+        width: 95px !important; 
+        left: 32% !important; 
+    }
+    
+    .gallery-item-3 { 
+        width: 115px !important; 
+        left: 50% !important; 
+    }
 }
