@@ -180,3 +180,60 @@ footer { background: #222; color: white; text-align: center; padding: 3rem 0; }
     .nav-links.active { display: flex !important; }
     .nav-links li { margin: 15px 0; }
 }
+.gallery{
+    
+    width: 100%;
+}
+
+/* --- CONTENEUR DU CARROUSEL --- */
+.gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px; /* Hauteur ajustée pour les images réduites */
+    margin: 0 auto;
+    max-width: 600px; /* Largeur resserrée pour grouper les 3 images */
+    position: relative;
+}
+
+/* --- PROPRIÉTÉS COMMUNES DES IMAGES --- */
+.gallery-item {
+    height: 125px; 
+    width: 165px;  
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    border-radius: 15px;
+    background-size: contain;
+}
+
+/* --- IMAGE 1 : Arrière-plan gauche --- */
+.gallery-item-1 { 
+    left: 20%;
+    height: 60%;
+    width: 150px; 
+    opacity: 0.4;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* --- IMAGE 2 : Premier plan intermédiaire (gauche ou droite selon rotation) --- */
+.gallery-item-2 { 
+    left: 35%;
+    height: 80%;
+    opacity: 0.7; 
+    width: 180px; 
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* --- IMAGE 3 : Image centrale (Mise en avant) --- */
+.gallery-item-3 { 
+    left: 50%;
+    height: 100%; 
+    width: 215px; 
+    opacity: 1;
+    box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+    transform: translateX(-50%);
+    z-index: 2;
+}
