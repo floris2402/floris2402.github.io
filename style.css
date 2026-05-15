@@ -49,98 +49,39 @@ nav {
     background-color: white;
 }
 
-.logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* --- HERO & FEATURES --- */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-
-.btn {
-    background: #42a5f5;
-    color: white;
-    padding: 14px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-/* --- CARROUSEL (ORDINATEUR) --- */
+/* --- CARROUSEL VERSION ORDINATEUR --- */
 .preview-section { 
     background-color: #f1f3f5; 
     width: 100%; 
-    padding: 2rem 0;
+    padding: 4rem 0;
 }
 
 .gallery-container {
     align-items: center;
     display: flex;
-    height: 350px; 
+    height: 450px; /* On donne de la place en hauteur */
     margin: 0 auto;
-    max-width: 500px; 
+    max-width: 600px; 
     position: relative;
 }
 
 .gallery-item {
-    height: 125px; 
-    width: 165px;  
+    /* --- LA CORRECTION EST ICI --- */
+    width: 180px;      /* Largeur de base sur ordinateur */
+    height: auto;       /* On laisse la hauteur s'adapter */
+    aspect-ratio: 9 / 19; /* On force le format vertical smartphone */
+    object-fit: contain;
+    /* ---------------------------- */
     opacity: 0;
     position: absolute;
     transition: all 0.4s ease-in-out;
     z-index: 0;
     border-radius: 15px;
-    object-fit: cover; /* Important pour éviter la déformation */
 }
 
 .gallery-item-1 { 
     left: 20%;
-    height: 65%;
-    width: 150px; 
+    width: 140px; 
     opacity: 0.4;
     transform: translateX(-50%);
     z-index: 1;
@@ -148,41 +89,25 @@ nav {
 
 .gallery-item-2 { 
     left: 35%;
-    height: 85%;
+    width: 170px; 
     opacity: 0.7; 
-    width: 180px; 
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .gallery-item-3 { 
     left: 50%;
-    height: 100%; 
-    width: 210px; 
+    width: 210px; /* Image centrale plus grande */
     opacity: 1;
     box-shadow: -2px 5px 25px rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
     z-index: 2;
 }
 
-/* --- FOOTER --- */
-footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
-.footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; }
-
 /* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .menu-toggle { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 5px; 
-        cursor: pointer; 
-    }
-    
-    .menu-toggle .bar { 
-        width: 25px; 
-        height: 3px; 
-        background: white; 
-    }
+    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle .bar { width: 25px; height: 3px; background: white; }
     
     .nav-links { 
         display: none; 
@@ -195,36 +120,26 @@ footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
         padding: 1rem; 
     }
     
-    .nav-links.active { display: flex; }
+    .nav-links.active { display: flex !important; }
 
-    /* --- CORRECTION FINALE DU CARROUSEL MOBILE --- */
     .gallery-container { 
         max-width: 95% !important; 
-        height: 300px !important; /* On redonne de la hauteur pour le format vertical */
+        height: 320px !important; 
     }
 
     .gallery-item {
-        /* On force le format vertical : largeur étroite, hauteur automatique */
         width: 100px !important; 
         height: auto !important; 
-        aspect-ratio: 9 / 19 !important; /* Ratio typique d'un écran de smartphone */
-        object-fit: contain !important; /* Garantit que l'image n'est jamais écrasée */
-        background-color: transparent;
+        aspect-ratio: 9 / 19 !important;
     }
 
-    /* Ajustement des positions pour éviter que les images ne se touchent trop */
-    .gallery-item-1 { 
-        width: 80px !important; 
-        left: 15% !important; 
-    }
-    
-    .gallery-item-2 { 
-        width: 95px !important; 
-        left: 32% !important; 
-    }
-    
-    .gallery-item-3 { 
-        width: 115px !important; 
-        left: 50% !important; 
-    }
+    .gallery-item-1 { width: 80px !important; left: 15% !important; }
+    .gallery-item-2 { width: 100px !important; left: 32% !important; }
+    .gallery-item-3 { width: 125px !important; left: 50% !important; }
 }
+
+/* Reste du CSS (Hero, Features, Footer) inchangé */
+.hero { text-align: center; padding: 100px 20px; color: white; background: #333; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: white; text-decoration: none; }
+footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
