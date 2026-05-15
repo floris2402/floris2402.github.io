@@ -1,6 +1,5 @@
-/* style.css - AlertMarc - VERSION FINALE VÉRIFIÉE */
+/* style.css - AlertMarc */
 
-/* --- RESET & BASE --- */
 * { 
     margin: 0; 
     padding: 0; 
@@ -15,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- NAVIGATION --- */
 header {
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
@@ -53,7 +52,6 @@ nav {
 .logo {
     font-size: 1.6rem;
     font-weight: bold;
-    color: white;
 }
 
 .nav-links {
@@ -69,60 +67,39 @@ nav {
     transition: 0.3s;
 }
 
-/* --- BOUTON BURGER (MOBILE) --- */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-/* --- SECTION HERO --- */
+/* --- HERO & FEATURES --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 140px 20px;
+    padding: 100px 20px;
 }
 
-.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-.hero p { font-size: 1.4rem; max-width: 700px; margin: 0 auto 2rem; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 
 .btn {
     background: #42a5f5;
     color: white;
-    padding: 16px 35px;
+    padding: 14px 30px;
     border: none;
     border-radius: 50px;
-    font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-.btn:hover { background: #1e88e5; transform: translateY(-3px); }
-
-/* --- SECTION FEATURES --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
 
 .feature-card {
@@ -133,47 +110,47 @@ nav {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.feature-card .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
-
-/* --- CARROUSEL --- */
+/* --- CARROUSEL (ORDINATEUR) --- */
 .preview-section { 
     background-color: #f1f3f5; 
     width: 100%; 
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .gallery-container {
     align-items: center;
     display: flex;
-    height: 450px; 
+    height: 350px; 
     margin: 0 auto;
-    max-width: 800px; 
+    max-width: 500px; 
     position: relative;
 }
 
 .gallery-item {
-    height: 100%;       
-    width: auto;        
-    object-fit: contain;
+    height: 125px; 
+    width: 165px;  
     opacity: 0;
     position: absolute;
     transition: all 0.4s ease-in-out;
     z-index: 0;
     border-radius: 15px;
+    object-fit: cover; /* Important pour éviter la déformation */
 }
 
 .gallery-item-1 { 
-    left: 25%;
-    height: 70%; 
+    left: 20%;
+    height: 65%;
+    width: 150px; 
     opacity: 0.4;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .gallery-item-2 { 
-    left: 38%;
-    height: 85%; 
+    left: 35%;
+    height: 85%;
     opacity: 0.7; 
+    width: 180px; 
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -181,50 +158,73 @@ nav {
 .gallery-item-3 { 
     left: 50%;
     height: 100%; 
+    width: 210px; 
     opacity: 1;
-    box-shadow: -2px 5px 25px rgba(0,0,0,0.3);
+    box-shadow: -2px 5px 25px rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
     z-index: 2;
 }
 
 /* --- FOOTER --- */
-footer { background: #222; color: white; text-align: center; padding: 3rem 0; }
-.footer-links { margin-top: 1rem; }
+footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
 .footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; }
 
 /* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .menu-toggle { display: flex; }
-
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        background-color: #1565c0;
-        padding: 20px;
-        text-align: center;
+    .menu-toggle { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 5px; 
+        cursor: pointer; 
     }
+    
+    .menu-toggle .bar { 
+        width: 25px; 
+        height: 3px; 
+        background: white; 
+    }
+    
+    .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        position: absolute; 
+        top: 65px; 
+        left: 0; 
+        background: #1565c0; 
+        padding: 1rem; 
+    }
+    
+    .nav-links.active { display: flex; }
 
-    .nav-links.active { display: flex !important; }
-
+    /* --- CORRECTION FINALE DU CARROUSEL MOBILE --- */
     .gallery-container { 
         max-width: 95% !important; 
-        height: 350px !important; 
+        height: 300px !important; /* On redonne de la hauteur pour le format vertical */
     }
 
     .gallery-item {
-        width: auto !important; 
-        height: 100% !important;
+        /* On force le format vertical : largeur étroite, hauteur automatique */
+        width: 100px !important; 
+        height: auto !important; 
+        aspect-ratio: 9 / 19 !important; /* Ratio typique d'un écran de smartphone */
+        object-fit: contain !important; /* Garantit que l'image n'est jamais écrasée */
+        background-color: transparent;
     }
 
-    .gallery-item-1 { height: 70% !important; left: 15% !important; }
-    .gallery-item-2 { height: 85% !important; left: 32% !important; }
-    .gallery-item-3 { height: 100% !important; left: 50% !important; }
-}
-    .gallery-item-1 { height: 70% !important; left: 15% !important; }
-    .gallery-item-2 { height: 85% !important; left: 32% !important; }
-    .gallery-item-3 { height: 100% !important; left: 50% !important; }
+    /* Ajustement des positions pour éviter que les images ne se touchent trop */
+    .gallery-item-1 { 
+        width: 80px !important; 
+        left: 15% !important; 
+    }
+    
+    .gallery-item-2 { 
+        width: 95px !important; 
+        left: 32% !important; 
+    }
+    
+    .gallery-item-3 { 
+        width: 115px !important; 
+        left: 50% !important; 
+    }
 }
