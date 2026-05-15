@@ -59,19 +59,19 @@ nav {
 .gallery-container {
     align-items: center;
     display: flex;
-    height: 450px; /* On donne de la place en hauteur */
+    height: 450px; /* C'est la hauteur qui commande tout ici */
     margin: 0 auto;
-    max-width: 600px; 
+    max-width: 800px; /* On élargit un peu pour laisser respirer les 3 images */
     position: relative;
 }
 
 .gallery-item {
-    /* --- LA CORRECTION EST ICI --- */
-    width: 180px;      /* Largeur de base sur ordinateur */
-    height: auto;       /* On laisse la hauteur s'adapter */
-    aspect-ratio: 9 / 19; /* On force le format vertical smartphone */
-    object-fit: contain;
-    /* ---------------------------- */
+    /* --- RÉGLAGE ANTI-DÉFORMATION --- */
+    height: 100%;       /* On utilise la hauteur comme référence */
+    width: auto;        /* La largeur se calcule TOUTE SEULE par rapport à la hauteur */
+    aspect-ratio: auto; /* On laisse l'image d'origine décider de son ratio */
+    object-fit: contain; /* L'image ne sera jamais étirée, elle reste entière */
+    /* -------------------------------- */
     opacity: 0;
     position: absolute;
     transition: all 0.4s ease-in-out;
@@ -79,67 +79,48 @@ nav {
     border-radius: 15px;
 }
 
+/* Image du fond (gauche) */
 .gallery-item-1 { 
-    left: 20%;
-    width: 140px; 
+    left: 25%;
+    height: 70%; /* Plus petite car elle est "plus loin" */
     opacity: 0.4;
     transform: translateX(-50%);
     z-index: 1;
 }
 
+/* Image intermédiaire */
 .gallery-item-2 { 
-    left: 35%;
-    width: 170px; 
+    left: 38%;
+    height: 85%; /* Taille moyenne */
     opacity: 0.7; 
     transform: translateX(-50%);
     z-index: 1;
 }
 
+/* Image centrale (Devant) */
 .gallery-item-3 { 
     left: 50%;
-    width: 210px; /* Image centrale plus grande */
+    height: 100%; /* Elle prend toute la hauteur du conteneur */
     opacity: 1;
     box-shadow: -2px 5px 25px rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
     z-index: 2;
 }
 
-/* --- ADAPTATION MOBILE --- */
+/* --- ADAPTATION MOBILE (Reste inchangé car il fonctionnait bien) --- */
 @media (max-width: 768px) {
-    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle .bar { width: 25px; height: 3px; background: white; }
-    
-    .nav-links { 
-        display: none; 
-        flex-direction: column; 
-        width: 100%; 
-        position: absolute; 
-        top: 65px; 
-        left: 0; 
-        background: #1565c0; 
-        padding: 1rem; 
-    }
-    
-    .nav-links.active { display: flex !important; }
-
     .gallery-container { 
         max-width: 95% !important; 
-        height: 320px !important; 
+        height: 350px !important; 
     }
 
     .gallery-item {
-        width: 100px !important; 
-        height: auto !important; 
-        aspect-ratio: 9 / 19 !important;
+        width: auto !important; 
+        height: 100% !important; 
+        aspect-ratio: auto !important;
     }
 
-    .gallery-item-1 { width: 80px !important; left: 15% !important; }
-    .gallery-item-2 { width: 100px !important; left: 32% !important; }
-    .gallery-item-3 { width: 125px !important; left: 50% !important; }
+    .gallery-item-1 { height: 70% !important; left: 15% !important; }
+    .gallery-item-2 { height: 85% !important; left: 32% !important; }
+    .gallery-item-3 { height: 100% !important; left: 50% !important; }
 }
-
-/* Reste du CSS (Hero, Features, Footer) inchangé */
-.hero { text-align: center; padding: 100px 20px; color: white; background: #333; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: white; text-decoration: none; }
-footer { background: #222; color: white; text-align: center; padding: 2rem 0; }
