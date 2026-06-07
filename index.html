@@ -12,11 +12,12 @@
 <header>
     <nav>
         <div class="logo-container">
-    <a href="index.html" class="logo-link">
-        <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
-        <span class="logo">AlertMarc</span>
-    </a>
-</div>
+            <!-- Lien ajouté autour du logo pour revenir à l'accueil -->
+            <a href="index.html" class="logo-link">
+                <img src="logo.jpg" alt="Logo AlertMarc" class="logo-img">
+                <span class="logo">AlertMarc</span>
+            </a>
+        </div>
 
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -35,10 +36,20 @@
 </header>
 
     <section class="hero" id="accueil">
-        <h1>AlertMarc</h1>
-        <p>Ne ratez plus aucune notification importante. Transformez les alertes de vos appareils connectés en messages vocaux ou en sirènes puissantes.</p>
-        <!-- Appel de la fonction Javascript pour le téléchargement -->
-        <button class="btn" onclick="telechargerApp()">Télécharger sur le Play Store</button>
+        <div class="hero-container">
+            <!-- QR Code placé à gauche -->
+            <div class="hero-qrcode">
+                <img src="QR Code1.png" alt="QR Code de démonstration" class="qrcode-img">
+            </div>
+            
+            <!-- Contenu texte et bouton à droite -->
+            <div class="hero-content">
+                <h1>AlertMarc</h1>
+                <p>Ne ratez plus aucune notification importante. Transformez les alertes de vos appareils connectés en messages vocaux ou en sirènes puissantes.</p>
+                <!-- Appel de la fonction Javascript pour le téléchargement -->
+                <button class="btn" onclick="telechargerApp()">Télécharger sur le Play Store</button>
+            </div>
+        </div>
     </section>
 
     <div class="container" id="features">
@@ -80,9 +91,9 @@
     <footer>
         <p>&copy; 2026 AlertMarc. Tous droits réservés.</p>
         <div class="footer-links">
-    <a href="cgv.html">Mentions Légales & Confidentialité</a>
-    <a href="contact.html">Aide & Support</a>
-</div>
+            <a href="cgv.html">Mentions Légales & Confidentialité</a>
+            <a href="contact.html">Aide & Support</a>
+        </div>
     </footer>
 
     <!-- Intégration du fichier JavaScript externe -->

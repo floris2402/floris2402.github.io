@@ -44,15 +44,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // SWIPE MOBILE
         let startX = 0;
-        document.querySelector('.gallery-container').addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
+        const galleryContainer = document.querySelector('.gallery-container');
+        if (galleryContainer) {
+            galleryContainer.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
 
-        document.querySelector('.gallery-container').addEventListener('touchend', e => {
-            let endX = e.changedTouches[0].clientX;
-            if (startX - endX > 50) moveNext();
-            if (endX - startX > 50) movePrev();
-        }, { passive: true });
+            galleryContainer.addEventListener('touchend', e => {
+                let endX = e.changedTouches[0].clientX;
+                if (startX - endX > 50) moveNext();
+                if (endX - startX > 50) movePrev();
+            }, { passive: true });
+        }
 
         updateGallery(); // Init
     }
